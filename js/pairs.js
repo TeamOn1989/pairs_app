@@ -3,7 +3,7 @@
     const CARDS_ARRAY = [];
     let numbersArray = [];
     let openedCards = [];
-    let preSetCardCount = 2;
+    let preSetCardCount = 8;
     let firstCard, secondCard;
 
     // создаю карточки отталкиваясь от числа инпута
