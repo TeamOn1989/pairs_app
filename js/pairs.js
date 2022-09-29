@@ -115,14 +115,54 @@
 
     function checkAllCards(arr, num) {
         if (arr.length === num * 2) {
-            confirm('Начать сначала?');
-            if ('yes') {
-                numbersArray = [];
-                CONTAINER.replaceChildren()
-                createCards(preSetCardCount)
-                createCardContent(preSetCardCount);
-                shuffleArr(numbersArray);
-            }
+            let conf = createConfirm()
+            CONTAINER.append(conf.confirmContainer)
+            console.log(conf)
+            if (conf.buttonYes) {
+                conf.buttonYes.addEventListener('click', function() {
+                    numbersArray = [];
+                    openedCards = [];
+                    CONTAINER.replaceChildren()
+                    createCards(preSetCardCount)
+                    createCardContent(preSetCardCount);
+                    shuffleArr(numbersArray);
+                })             
+            }; 
+            if (conf.buttonNo) {
+                conf.buttonNo.addEventListener('click', function() {
+                    alert('Ну нажми да, ну пожалуууйста)))');
+                });
+            };
+        }
+    }
+
+    // СОЗДАНИЕ КОНФИРМА
+    function createConfirm() {
+        let confirmContainer = document.createElement('div');
+        let confirmHeading = document.createElement('h2');
+        let buttonYes = document.createElement('button');
+        let buttonNo = document.createElement('button');
+        let wrpper = document.createElement('div');
+    
+        confirmContainer.classList.add('confirm-container');
+        confirmHeading.classList.add('container_heading')
+        confirmHeading.textContent = 'Начать сначала?';
+    
+        buttonYes.classList.add('confirm-btn')
+        buttonYes.textContent = 'Да';
+        buttonNo.classList.add('confirm-btn')
+        buttonNo.textContent = 'Нет';
+        wrpper.classList.add('button-wrapper')
+    
+        wrpper.append(buttonYes, buttonNo);
+        confirmContainer.append(confirmHeading, wrpper);
+    
+        
+        
+        return {
+            confirmContainer,
+            buttonYes,
+            buttonNo,
         }
     }
     
