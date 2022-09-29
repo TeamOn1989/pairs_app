@@ -1,0 +1,55 @@
+.field-4x4 {
+    margin: 25vh auto;
+    vertical-align: middle;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 15px;
+    width: 500px;
+    height: 500px;
+    background-color: blanchedalmond;
+    border: 2px solid rgba(69, 114, 212, 0.774);
+    box-shadow: 0 0 30px 20px rgba(69, 114, 212, 0.774);
+}
+
+.card {
+    display: flex;
+    margin-top: 5px;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 5px;
+    width: 20%;
+    height: 20%;
+    border: 2px solid gray;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.555);
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: backgound 3s ease ;
+}
+
+.card-match {
+    background-color: #2cf580;
+    box-shadow: 0 0 10px 10px rgba(17, 228, 9, 0.555);
+}
+
+.card-dismatch {
+    background-color: #f52c2c;
+    box-shadow: 0 0 10px 10px rgba(236, 50, 4, 0.555);
+}
+
+.cards-backside {
+    background-color: #2cbcf5;
+}
+
+.hover:hover {
+    background-color: #979ec9;
+}
+
+.display {
+    display: none;
+}
